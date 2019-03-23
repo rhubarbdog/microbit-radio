@@ -36,3 +36,8 @@ type.
 <a href="https://makecode.microbit.org/_R6gLJJHpDeUY">Blocks radio consumer
 (receive numbers)</a>
 </br>
+<h2>Note</h2>
+</br>
+For this to work both Micropython <code>make_radio</code> and MakeCode blocks
+radio must use the same <code>group</code>. You must include the block <code>
+radio.setGroup()</code>
