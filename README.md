@@ -1,18 +1,19 @@
 <h1>Micropython-MakeCode compatible Radio</h1>
 </br>
-</br>
-Class `make_radio` includes all the functionality of the Micropyhton `radio`
-module, while being compatible with MakeCode blocks. When you instansiate the
-`make_radio` all the parameters of `radio.config` are available which make
-sense. Whilst keeping the radio configured to work between Micropython and
-MakeCode. The radio can be switched `.on()` and `.off()` with those methods.
-You can send a number (integer or float) with method `.send_number(number)`.
+Class <code>make_radio</code> includes all the functionality of the
+Micropyhton <code>radio</code> module, while being compatible with MakeCode
+blocks. When you instansiate the <code>make_radio</code> all the parameters
+of <code>radio.config</code> are available which make sense. Whilst keeping
+the radio configured to work between Micropython and MakeCode. The radio can
+be switched <code>.on()</code> and <code>.off()</code> with those methods. You
+can send a number (integer or float) with method <code>.send_number(number)
+</code>.
 Send a value pair (a string with a number) with method
-`.send_value(value, number)`. Or just send a string with the
-`.send_string(message)` method. Unlike MakeCode blocks with which in a single
-program you can only accept one of a number, value pair or a string.
-Micropython provides the convenient `.receive_packet()` method. The return
-values are:
+<code>.send_value(value, number)</code>. Or just send a string with the
+<code>.send_string(message)</code> method. Unlike MakeCode blocks with which
+in a single program you can only accept one of a number, value pair or a
+string. Micropython provides the convenient <code>.receive_packet()</code>
+method. The return values are:
 <list>
 <li>None - no data was read or the packet was of an unspecified type</li>
 <li>a string - A message was received</li>
@@ -20,7 +21,8 @@ values are:
 <li>an int or a float - A number was received</li>
 </list>
 </br>
-if required use the python function `type` to determine the packet type.
+if required use the python function <code>type</code> to determine the packet
+type.
 </br>
 <h2>Some MakeCode Test Programs</h2>
 <a href="https://makecode.microbit.org/_JCJhjaP5dUzv">Blocks radio producer
