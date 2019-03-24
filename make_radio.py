@@ -5,7 +5,7 @@
 # (https://creativecommons.org/licenses/by-sa/4.0/)
 #
 # This piece of work has completed the psuedo-python and Barry Byford has
-# given me his agreement to license this code seperately in communication
+# given me his permission to license this code seperately in communication
 # https://github.com/ukBaz/ukBaz.github.io/issues/29
 #
 # Author          - Phil Hall - https://github.com/rhubarbdog
