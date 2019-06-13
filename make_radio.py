@@ -120,10 +120,10 @@ class MakeRadio:
             return number
         elif packet_type == 1: # value
             value = ustruct.unpack('<i', data[12:16])[0]
-            name = str(data[17:], 'ascii') 
+            name = str(data[17:], 'utf8') 
             return (name, value)
         elif packet_type == 2: # string
-            message = str(data[13:], 'ascii') 
+            message = str(data[13:], 'utf8') 
             return message
         elif packet_type == 4: # floating point number
             float_ = ustruct.unpack('<d',data[-8:])[0]
@@ -145,6 +145,7 @@ class MakeRadio:
             return None
 
         packet_type = int.from_bytes(data[3:4], 'little')
+        packet_type = ustruct.unpack('<B', data[3:4])[0]
         print("packet id\t:",packet_type)
         time_stamp = int.from_bytes(data[4:8], 'little')
         print('time stamp\t:',time_stamp)
