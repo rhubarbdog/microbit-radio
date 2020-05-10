@@ -25,6 +25,7 @@
 #   7) Limit send_value: name length to 8
 #   8) Added support for packet type 5 value with float
 #   9) Added on() and off() methods for completeness
+#  10) Strip 0 bytes as per issue 1
 
 import radio
 import microbit
@@ -121,10 +122,10 @@ class MakeRadio:
         elif packet_type == 1: # value
             value = ustruct.unpack('<i', data[12:16])[0]
             name = str(data[17:], 'utf8') 
-            return (name, value)
+            return (name.rstrip('\x00'), value) 
         elif packet_type == 2: # string
             message = str(data[13:], 'utf8') 
-            return message
+            return message.rstrip('\x00') 
         elif packet_type == 4: # floating point number
             float_ = ustruct.unpack('<d',data[-8:])[0]
             return float_
@@ -134,7 +135,7 @@ class MakeRadio:
             if l > 29:
                 l = 29
             name = str(data[21:l], 'ascii') 
-            return (name, float_)
+            return (name.rstrip('\x00'), float_)
         
         return None # raise Exception('Unknown packet type')
 
